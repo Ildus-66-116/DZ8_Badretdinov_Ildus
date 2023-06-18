@@ -133,49 +133,91 @@
 // 6 16
 // 9 6
 
-void InputMatrix(int[,] matrix)
-{
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-            matrix[i, j] = new Random().Next(1, 11); // [1, 10]
-    }
-}
+// void InputMatrix(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//             matrix[i, j] = new Random().Next(1, 11); // [1, 10]
+//     }
+// }
 
 
-void PrintMatrix(int[,] matrix)
-{
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-            Console.Write($"{matrix[i, j]} \t");
-        Console.WriteLine();
-    }
-}
+// void PrintMatrix(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//             Console.Write($"{matrix[i, j]} \t");
+//         Console.WriteLine();
+//     }
+// }
 
 
-int[,] ReleaseMatrix(int[,] FirstMatrix, int[,] SecondMatrix)
-{
-    int[,] result = new int[FirstMatrix.GetLength(0), FirstMatrix.GetLength(1)];
-    for (int i = 0; i < FirstMatrix.GetLength(0); i++)
-    {
-        for (int j = 0; j < FirstMatrix.GetLength(1); j++)
-            result[i, j] = FirstMatrix[i, j] * SecondMatrix[i, j];
-    }
-    return result;
-}
+// int[,] ReleaseMatrix(int[,] FirstMatrix, int[,] SecondMatrix)
+// {
+//     int[,] result = new int[FirstMatrix.GetLength(0), FirstMatrix.GetLength(1)];
+//     for (int i = 0; i < FirstMatrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < FirstMatrix.GetLength(1); j++)
+//             result[i, j] = FirstMatrix[i, j] * SecondMatrix[i, j];
+//     }
+//     return result;
+// }
 
 
-Console.Clear();
-Console.Write("Введите размер матриц: "); // размеры матриц должны быть одинаковые
-int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
-int[,] FirstMatrix = new int[size[0], size[1]];
-int[,] SecondMatrix = new int[size[0], size[1]];
-InputMatrix(FirstMatrix);
-InputMatrix(SecondMatrix);
-Console.WriteLine("Начальный массив 1: ");
-PrintMatrix(FirstMatrix);
-Console.WriteLine("Начальный массив 2: ");
-PrintMatrix(SecondMatrix);
-Console.WriteLine("Результат:");
-PrintMatrix(ReleaseMatrix(FirstMatrix, SecondMatrix));
+// Console.Clear();
+// Console.Write("Введите размер матриц: "); // размеры матриц должны быть одинаковые
+// int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
+// int[,] FirstMatrix = new int[size[0], size[1]];
+// int[,] SecondMatrix = new int[size[0], size[1]];
+// InputMatrix(FirstMatrix);
+// InputMatrix(SecondMatrix);
+// Console.WriteLine("Начальный массив 1: ");
+// PrintMatrix(FirstMatrix);
+// Console.WriteLine("Начальный массив 2: ");
+// PrintMatrix(SecondMatrix);
+// Console.WriteLine("Результат:");
+// PrintMatrix(ReleaseMatrix(FirstMatrix, SecondMatrix));
+
+// Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
+//Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+// Массив размером 2 x 2 x 2
+// 66(0,0,0) 25(0,1,0)
+// 34(1,0,0) 41(1,1,0)
+// 27(0,0,1) 90(0,1,1)
+// 26(1,0,1) 55(1,1,1)
+
+// void InputMatrix(int[,,] ThreeMatrix)
+// {
+//     int number = 10;
+//     for (int i = 0; i < ThreeMatrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < ThreeMatrix.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < ThreeMatrix.GetLength(2); k++)
+//                 ThreeMatrix[i, j, k] = number++; 
+//         }
+//     }
+// }
+
+
+// void PrintMatrix(int[,,] ThreeMatrix)
+// {
+//     for (int i = 0; i < ThreeMatrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < ThreeMatrix.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < ThreeMatrix.GetLength(2); k++)
+//                 Console.WriteLine($"{ThreeMatrix[i, j, k]} ({i}, {j}, {k})");
+//         }
+//     }
+// }
+
+
+// Console.Clear();
+// Console.Write("Введите размер трехмерного массива: ");
+// int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
+// int[,,] ThreeMatrix = new int[size[0], size[1], size[2]];
+// InputMatrix(ThreeMatrix);
+// PrintMatrix(ThreeMatrix);
